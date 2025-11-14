@@ -35,24 +35,14 @@ export default function CTA() {
               Свяжитесь с нами для консультации и расчета стоимости вашего проекта
             </p>
 
-            <div className="space-y-4">
-              <motion.a
-                href="tel:+79999999999"
-                className="block px-8 py-4 bg-white text-wood-900 rounded-lg text-lg font-semibold hover:bg-wood-50 transition-colors shadow-xl text-center"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                📞 Позвонить нам
-              </motion.a>
-              <motion.a
-                href="mailto:info@woodlines.ru"
-                className="block px-8 py-4 border-2 border-white text-white rounded-lg text-lg font-semibold hover:bg-white/10 transition-all text-center"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                ✉️ Написать нам
-              </motion.a>
-            </div>
+            <motion.a
+              href="tel:+79104332332"
+              className="block px-8 py-4 bg-white text-wood-900 rounded-lg text-lg font-semibold hover:bg-wood-50 transition-colors shadow-xl text-center"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              📞 Позвонить нам
+            </motion.a>
           </motion.div>
 
           <motion.div

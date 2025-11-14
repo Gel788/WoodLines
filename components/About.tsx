@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const features = [
   {
@@ -62,15 +63,15 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8 }}
-            className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-2xl bg-gradient-to-br from-wood-700 to-wood-900"
+            className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-2xl"
           >
-            <div className="absolute inset-0 opacity-10" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='%23ffffff'/%3E%3Cpath d='M0 0l100 100M100 0L0 100' stroke='%23ffffff' stroke-width='1' opacity='0.1'/%3E%3C/svg%3E")`,
-              backgroundSize: '100px 100px'
-            }}></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white/20 text-8xl">🏭</span>
-            </div>
+            <Image
+              src="/images/все под ключ.jpg"
+              alt="Furniture workshop"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </motion.div>
         </div>
 

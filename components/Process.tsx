@@ -1,37 +1,38 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const steps = [
   {
     number: '01',
     title: 'Консультация',
     description: 'Обсуждение ваших пожеланий и требований к мебели',
-    gradient: 'from-wood-500 to-wood-700',
+    image: '/images/консультация.jpg',
   },
   {
     number: '02',
     title: 'Замер',
     description: 'Выезд специалиста для точного замера помещения',
-    gradient: 'from-wood-600 to-wood-800',
+    image: '/images/замер.jpg',
   },
   {
     number: '03',
     title: 'Проектирование',
     description: 'Разработка дизайн-проекта с 3D-визуализацией',
-    gradient: 'from-wood-700 to-wood-900',
+    image: '/images/проектирование .jpg',
   },
   {
     number: '04',
     title: 'Изготовление',
     description: 'Производство мебели на собственном производстве',
-    gradient: 'from-wood-800 to-wood-900',
+    image: '/images/изготовление .jpg',
   },
   {
     number: '05',
     title: 'Установка',
     description: 'Доставка и профессиональная установка "под ключ"',
-    gradient: 'from-wood-600 to-wood-800',
+    image: '/images/установка.jpg',
   },
 ]
 
@@ -74,17 +75,17 @@ export default function Process() {
               }`}
             >
               <motion.div
-                className={`relative w-full lg:w-1/2 aspect-[4/3] rounded-lg overflow-hidden shadow-xl bg-gradient-to-br ${step.gradient}`}
+                className="relative w-full lg:w-1/2 aspect-[4/3] rounded-lg overflow-hidden shadow-xl bg-wood-100"
                 whileHover={{ scale: 1.02, y: -5 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="absolute inset-0 opacity-10" style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h80v80H0z' fill='%23ffffff'/%3E%3Cpath d='M0 0l80 80M80 0L0 80' stroke='%23ffffff' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E")`,
-                  backgroundSize: '80px 80px'
-                }}></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-white/20 text-6xl">{index === 0 ? '💬' : index === 1 ? '📏' : index === 2 ? '✏️' : index === 3 ? '🔨' : '🚚'}</span>
-                </div>
+                <Image
+                  src={step.image}
+                  alt={step.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </motion.div>
               <div className="w-full lg:w-1/2">
                 <div className="text-6xl font-serif font-bold text-wood-200 mb-4">

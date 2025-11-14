@@ -1,27 +1,28 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const services = [
   {
     title: 'Кухни',
     description: 'Индивидуальные кухни на заказ с учетом ваших пожеланий и особенностей помещения',
-    gradient: 'from-wood-600 to-wood-800',
+    image: '/images/Кухня.jpg',
   },
   {
     title: 'Шкафы',
     description: 'Встроенные и корпусные шкафы для любой комнаты с оптимальным использованием пространства',
-    gradient: 'from-wood-700 to-wood-900',
+    image: '/images/шкафы.jpg',
   },
   {
     title: 'Гардеробные',
     description: 'Современные гардеробные системы с продуманной организацией пространства',
-    gradient: 'from-wood-500 to-wood-700',
+    image: '/images/гардеробные .jpg',
   },
   {
     title: 'Встраиваемая мебель',
     description: 'Мебель, идеально вписывающаяся в интерьер и максимально использующая площадь',
-    gradient: 'from-wood-800 to-wood-900',
+    image: '/images/Встраиваемая мебель.JPG',
   },
 ]
 
@@ -63,14 +64,17 @@ export default function Services() {
               className="group cursor-pointer"
             >
               <motion.div
-                className={`relative aspect-[4/3] mb-6 rounded-lg overflow-hidden shadow-lg bg-gradient-to-br ${service.gradient}`}
+                className="relative aspect-[4/3] mb-6 rounded-lg overflow-hidden shadow-lg bg-wood-100"
                 whileHover={{ y: -10, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="absolute inset-0 opacity-10" style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='%23ffffff'/%3E%3Cpath d='M0 0l60 60M60 0L0 60' stroke='%23ffffff' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E")`,
-                  backgroundSize: '60px 60px'
-                }}></div>
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                />
                 <motion.div
                   className="absolute inset-0 bg-wood-900/0 group-hover:bg-wood-900/20 transition-colors duration-300"
                   initial={false}

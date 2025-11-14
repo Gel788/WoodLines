@@ -27,13 +27,8 @@ export default function Footer() {
             <ul className="space-y-2 text-wood-600 text-sm">
               <li>Москва и МО</li>
               <li>
-                <a href="tel:+79999999999" className="hover:text-wood-900 transition-colors">
-                  +7 (999) 999-99-99
-                </a>
-              </li>
-              <li>
-                <a href="mailto:info@woodlines.ru" className="hover:text-wood-900 transition-colors">
-                  info@woodlines.ru
+                <a href="tel:+79104332332" className="hover:text-wood-900 transition-colors">
+                  +7 910 433 2332
                 </a>
               </li>
             </ul>
